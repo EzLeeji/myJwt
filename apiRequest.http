@@ -1,0 +1,35 @@
+
+### 회원가입 권한 : ROLE_USER, ROLE_MANAGER, ROLE_ADMIN
+POST http://localhost:8081/user
+Content-Type: application/json
+
+{
+  "username": "user1234",
+  "password": "1234",
+  "roles": "ROLE_USER"
+}
+
+### 로그인 시도
+POST http://localhost:8081/login
+Content-Type: application/json
+
+{
+  "username": "user1234",
+  "password": "1234"
+}
+
+### user 권한접근하기
+GET http://localhost:8081/api/v1/user/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKV1QgVE9LRU4iLCJpZCI6IjEiLCJleHAiOjE2MzQyMjEyMTksInVzZXJuYW1lIjoidXNlcjEyMzQifQ.WHey0LPC9Z7SK9lKCA9G5tgcgljWAxBKa3z_ykqMVu0
+
+### manager 권한접근하기
+GET http://localhost:8081/api/v1/manager/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKV1QgVE9LRU4iLCJpZCI6IjEiLCJleHAiOjE2MzQyMjEyMTksInVzZXJuYW1lIjoidXNlcjEyMzQifQ.WHey0LPC9Z7SK9lKCA9G5tgcgljWAxBKa3z_ykqMVu0
+
+### admin 권한접근하기
+GET http://localhost:8081/api/v1/admin/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKV1QgVE9LRU4iLCJpZCI6IjEiLCJleHAiOjE2MzQyMjEyMTksInVzZXJuYW1lIjoidXNlcjEyMzQifQ.WHey0LPC9Z7SK9lKCA9G5tgcgljWAxBKa3z_ykqMVu0
+
+### 로그아웃
+GET http://localhost:8081/logout
+
