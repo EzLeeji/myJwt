@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 public class SbeforeFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        System.out.println("필터 만들어보기.");
+        System.out.println("필터 만들어보기. ");
 
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
